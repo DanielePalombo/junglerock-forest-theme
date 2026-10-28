@@ -1,0 +1,5 @@
+# Fuori dallo zip del tema (release e download di Git Updater)
+.github export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+README.md export-ignore

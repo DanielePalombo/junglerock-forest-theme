@@ -1,0 +1,46 @@
+name: Controlli e release
+
+# Ogni push su main viene controllato.
+# Un tag di versione (es. 1.0.1, uguale a "Version" in style.css) crea anche la release con lo zip del tema.
+on:
+  push:
+    branches: [main]
+    tags: ['[0-9]+.[0-9]+.[0-9]+']
+
+permissions:
+  contents: write
+
+jobs:
+  controlli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sintassi PHP
+        run: for f in $(git ls-files '*.php'); do php -l "$f"; done
+      - name: theme.json valido
+        run: jq empty theme.json
+      - name: Versione in style.css uguale al tag
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          v=$(sed -n 's/^Version: *//p' style.css | tr -d '\r')
+          if [ "$v" != "$GITHUB_REF_NAME" ]; then
+            echo "::error file=style.css::Version è $v ma il tag è $GITHUB_REF_NAME: Git Updater andrebbe in loop di aggiornamenti"
+            exit 1
+          fi
+
+  release:
+    needs: controlli
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip del tema
+        # git archive salta i file marcati export-ignore in .gitattributes (workflow, README)
+        run: |
+          mkdir -p "$RUNNER_TEMP/pkg/junglerock-forest-theme"
+          git archive HEAD | tar -x -C "$RUNNER_TEMP/pkg/junglerock-forest-theme"
+          cd "$RUNNER_TEMP/pkg" && zip -qr junglerock-forest-theme.zip junglerock-forest-theme
+      - name: Release su GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" "$RUNNER_TEMP/pkg/junglerock-forest-theme.zip" --title "$GITHUB_REF_NAME" --generate-notes
