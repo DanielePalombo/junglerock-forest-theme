@@ -15,14 +15,13 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
+<?php if ( junglerock_nav_menu_id() ) : ?>
+<!-- wp:navigation {"ref":<?php echo junglerock_nav_menu_id(); ?>,"overlayMenu":"mobile","className":"jr-nav","layout":{"type":"flex","justifyContent":"right"}} /-->
+<?php else : ?>
 <!-- wp:navigation {"overlayMenu":"mobile","className":"jr-nav","layout":{"type":"flex","justifyContent":"right"}} -->
-<!-- wp:navigation-link {"label":"La palestra","url":"/la-palestra/","kind":"custom"} /-->
-<!-- wp:navigation-link {"label":"Corsi","url":"/corsi/","kind":"custom"} /-->
-<!-- wp:navigation-link {"label":"Orari","url":"/orari/","kind":"custom"} /-->
-<!-- wp:navigation-link {"label":"Iscriviti","url":"/iscriviti/","kind":"custom"} /-->
-<!-- wp:navigation-link {"label":"Chi siamo","url":"/chi-siamo/","kind":"custom"} /-->
-<!-- wp:navigation-link {"label":"Blog","url":"/blog/","kind":"custom"} /-->
-<!-- wp:navigation-link {"label":"Contatti","url":"/contatti/","kind":"custom","className":"jr-nav__cta"} /-->
-<!-- /wp:navigation --></div>
+<?php echo junglerock_nav_links(); ?>
+
+<!-- /wp:navigation -->
+<?php endif; ?></div>
 <!-- /wp:group --></header>
 <!-- /wp:group -->

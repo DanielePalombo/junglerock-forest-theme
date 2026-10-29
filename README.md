@@ -10,6 +10,8 @@ Si aggiorna da wp-admin tramite [Git Updater](https://git-updater.com), che legg
 - `patterns/`: le parti che usano immagini del tema (foto della home), perché un template `.html` non può calcolare l'indirizzo del tema
 - `assets/css/theme.css`: stile di base; `assets/css/motion.css` e `assets/js/motion.js`: parallasse e comparsa allo scorrimento
 - Logo: l'header usa il blocco Logo del sito, che si cambia da Aspetto → Editor; finché non ne viene scelto uno, `functions.php` mostra `assets/img/logo.svg`
+- Home: è il contenuto della pagina impostata come prima pagina (Impostazioni → Lettura), che si modifica da Pagine. Finché la pagina è vuota si vede il pattern `junglerock/front-page`, che si può anche inserire da "Pattern → Jungle Rock" per ripartire dalla home originale
+- Menu: l'header usa il menu di navigazione "Menu principale" (Aspetto → Editor → Navigazione). Il tema lo crea al primo accesso a wp-admin con le voci di `junglerock_nav_links()` in `functions.php`; se viene eliminato, l'header torna a quelle voci
 
 ## Anteprima in locale
 

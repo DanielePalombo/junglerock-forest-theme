@@ -1,12 +1,15 @@
 <?php
 /**
- * Title: Contenuto: front-page
+ * Title: Home Jungle Rock
  * Slug: junglerock/front-page
- * Inserter: no
+ * Description: Il contenuto completo della home: copertina, orari, corsi, chi siamo, accesso e ultime news.
+ * Categories: junglerock
+ * Block Types: core/post-content
+ * Post Types: page
+ * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"main","className":"jr-home","layout":{"type":"constrained"}} -->
-<main class="wp-block-group jr-home"><!-- wp:cover {"url":"<?php echo esc_url( get_theme_file_uri( 'assets/img/photo-13.jpg' ) ); ?>","dimRatio":50,"customOverlayColor":"#1f2a12","minHeight":100,"minHeightUnit":"vh","contentPosition":"center left","align":"full","className":"jr-pxhero jr-px-bg","layout":{"type":"constrained"}} -->
+<!-- wp:cover {"url":"<?php echo esc_url( get_theme_file_uri( 'assets/img/photo-13.jpg' ) ); ?>","dimRatio":50,"customOverlayColor":"#1f2a12","minHeight":100,"minHeightUnit":"vh","contentPosition":"center left","align":"full","className":"jr-pxhero jr-px-bg","layout":{"type":"constrained"}} -->
 <div class="wp-block-cover alignfull has-custom-content-position is-position-center-left jr-pxhero jr-px-bg" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim" style="background-color:#1f2a12"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_theme_file_uri( 'assets/img/photo-13.jpg' ) ); ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:html -->
 <div class="jr-leaves" aria-hidden="true"><span class="jr-leaf jr-leaf--1 jr-px-s-45"></span><span class="jr-leaf jr-leaf--2 jr-px-s-25"></span><span class="jr-leaf jr-leaf--3 jr-px-s-60"></span><span class="jr-leaf jr-leaf--4 jr-px-s-35"></span></div>
 <!-- /wp:html -->
@@ -408,5 +411,4 @@
 <!-- wp:post-title {"level":3,"isLink":true} /-->
 <!-- /wp:post-template --></div>
 <!-- /wp:query --></div>
-<!-- /wp:group --></main>
 <!-- /wp:group -->
