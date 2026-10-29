@@ -7,8 +7,9 @@ Si aggiorna da wp-admin tramite [Git Updater](https://git-updater.com), che legg
 
 - `theme.json`: colori, font (inclusi in `assets/fonts`, niente Google Fonts), spaziature
 - `templates/`, `parts/`: template a blocchi
-- `patterns/`: le parti che usano immagini del tema (logo, foto della home), perché un template `.html` non può calcolare l'indirizzo del tema
+- `patterns/`: le parti che usano immagini del tema (foto della home), perché un template `.html` non può calcolare l'indirizzo del tema
 - `assets/css/theme.css`: stile di base; `assets/css/motion.css` e `assets/js/motion.js`: parallasse e comparsa allo scorrimento
+- Logo: l'header usa il blocco Logo del sito, che si cambia da Aspetto → Editor; finché non ne viene scelto uno, `functions.php` mostra `assets/img/logo.svg`
 
 ## Anteprima in locale
 
