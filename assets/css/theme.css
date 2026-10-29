@@ -46,7 +46,7 @@ h1 span, h2 span { color: var(--jr-purple); }
 .jr-header::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(243, 237, 224, .92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
 .jr-brand { gap: 12px; }
 .jr-brand__logo { margin: 0; }
-.jr-brand__logo img { display: block; border-radius: 50%; }
+.jr-brand__logo img { display: block; height: auto; }
 .jr-brand__name { margin: 0; font-family: var(--wp--preset--font-family--display); font-weight: 700; font-size: 1.55rem; text-transform: uppercase; line-height: 1; }
 .jr-brand__name a { color: var(--jr-purple); text-decoration: none; }
 .jr-brand__name span { color: var(--jr-olive); }
